@@ -1,3 +1,5 @@
+#include "request.hpp"
+
 #include <iostream>
 
 enum Option {DEFAULT, CUSTOM, INVALID};
@@ -38,7 +40,13 @@ Option handle_input(int &num_cycles, int &num_servers)
 
 int main()
 {
+    srand(time(NULL)); // seeding random number generator
     int num_cycles = 10000, num_servers = 10;
     Option chosen_option = handle_input(num_cycles, num_servers);
+
+    Request* sample1 = new Request();
+    Request* sample2 = new Request();
+
+    std::cout << sample1->to_string() << sample2->to_string();
     return 0;
 }
