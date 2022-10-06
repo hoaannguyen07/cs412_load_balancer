@@ -16,9 +16,9 @@ void Request::generate_request()
     std::string ip_out = generate_random_ip();
     int duration = rand() % 501 + 10;
 
-    this->ip_in = ip_in;
-    this->ip_out = ip_out;
-    this->duration = duration;
+    this->m_ip_in = ip_in;
+    this->m_ip_out = ip_out;
+    this->m_duration = duration;
     
 }
 
@@ -39,9 +39,9 @@ std::string Request::generate_random_ip()
 
 std::string Request::to_string()
 {
-    std::string result = "Request: {\n\tIP in: " + this->ip_in 
-                            + ",\n\tIP out: " + this->ip_out 
-                            + ",\n\tduration: " + std::to_string(this->duration) 
+    std::string result = "Request: {\n\tIP in: " + this->m_ip_in 
+                            + ",\n\tIP out: " + this->m_ip_out 
+                            + ",\n\tduration: " + std::to_string(this->m_duration) 
                             + "\n}\n";
     return result;
 }

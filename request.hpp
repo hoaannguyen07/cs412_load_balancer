@@ -7,16 +7,13 @@
 /**
  * @brief Outlines a mock request a server would receive
  * 
- * @param ip_in The IP address of the incoming request
- * @param ip_out The IP address that the server should send the request once it has formed a response
- * @param duration The amount of time this request should take to process
  */
 class Request
 {
 private:
-    std::string ip_in;
-    std::string ip_out;
-    int duration;
+    std::string m_ip_in;
+    std::string m_ip_out;
+    int m_duration;
 
     void generate_request();
     std::string generate_random_ip();
