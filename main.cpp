@@ -1,6 +1,9 @@
 #include "request.hpp"
+#include "request-queue.hpp"
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 enum Option {DEFAULT, CUSTOM, INVALID};
 
@@ -44,9 +47,16 @@ int main()
     int num_cycles = 10000, num_servers = 10;
     Option chosen_option = handle_input(num_cycles, num_servers);
 
-    Request* sample1 = new Request();
-    Request* sample2 = new Request();
+    RequestQueue requestQueue(5);
 
-    std::cout << sample1->to_string() << sample2->to_string();
+    Request randomRequest = Request();
+
+    requestQueue.push(randomRequest);
+
+    std::cout << requestQueue.getNextRequest().to_string() << requestQueue.getNextRequest().to_string();
+
+    std::cout << requestQueue.to_string();
+
+
     return 0;
 }
