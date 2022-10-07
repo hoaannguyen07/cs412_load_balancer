@@ -1,5 +1,6 @@
 #include "request.hpp"
 #include "request-queue.hpp"
+#include "server.hpp"
 
 #include <iostream>
 #include <stdlib.h>
@@ -41,12 +42,8 @@ Option handle_input(int &num_cycles, int &num_servers)
     return option;
 }
 
-int main()
+void testRequestQueue()
 {
-    srand(time(NULL)); // seeding random number generator
-    int num_cycles = 10000, num_servers = 10;
-    Option chosen_option = handle_input(num_cycles, num_servers);
-
     RequestQueue requestQueue(5);
 
     Request randomRequest = Request();
@@ -56,6 +53,28 @@ int main()
     std::cout << requestQueue.getNextRequest().to_string() << requestQueue.getNextRequest().to_string();
 
     std::cout << requestQueue.to_string();
+}
+
+void testServer()
+{
+    Server server = Server("A");
+    std::cout << server.to_string();
+
+    Request request = Request();
+    server.assignRequest(&request, 3);
+    std::cout << server.m_requestCurrentlyHandling->to_string();
+    server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration() - 1);
+    server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration());
+
+}
+
+int main()
+{
+    srand(time(NULL)); // seeding random number generator
+    int num_cycles = 10000, num_servers = 10;
+    Option chosen_option = handle_input(num_cycles, num_servers);
+
+    testServer();
 
 
     return 0;

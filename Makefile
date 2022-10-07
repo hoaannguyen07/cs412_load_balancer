@@ -1,6 +1,6 @@
 CFLAGS = -O
 CC = g++
-SRC = main.cpp request.cpp request-queue.cpp
+SRC = main.cpp request.cpp request-queue.cpp server.cpp
 OBJ = $(SRC:.cpp = .o)
 
 all: build run
