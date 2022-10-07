@@ -37,6 +37,11 @@ std::string Request::generate_random_ip()
     return result;
 }
 
+int Request::getDuration()
+{
+    return this->m_duration;
+}
+
 std::string Request::to_string()
 {
     std::string result = "Request: {\n\tIP in: " + this->m_ip_in 

@@ -26,6 +26,13 @@ public:
     ~Request() {};
 
     /**
+     * @brief Get the duration it would take to resolve this particular request
+     * 
+     * @return int 
+     */
+    int getDuration();
+
+    /**
      * @brief Puts the request in a nicely laid out string format for cout and debugging
      * 
      * @return std::string 
