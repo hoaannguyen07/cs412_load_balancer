@@ -20,9 +20,8 @@ public:
      * @brief Construct a new Request Queue object with a preset amount of random requests already populating the queue
      * 
      * @param initRequestAmount Amount of initial random requests to be generated. Defaults to 500
-     * 
      */
-    RequestQueue(int);
+    RequestQueue(int initRequestAmount = 500);
     ~RequestQueue() {};
 
     /**
@@ -43,8 +42,9 @@ public:
     /**
      * @brief Add a new request into the Request Queue
      * 
+     * @param newRequest The request to be added to the request queue
      */
-    void push(Request&);
+    void push(Request& newRequest);
 
     /**
      * @brief Pop the request currently at the front of the queue
