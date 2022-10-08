@@ -6,10 +6,10 @@ OBJ = $(SRC:.cpp = .o)
 all: build run
 
 build: $(OBJ)
-	$(CC) $(CFLAGS) -o LoadBalancer $(OBJ)
+	$(CC) $(CFLAGS) -o LoadBalancingSimulator $(OBJ)
 
-run: LoadBalancer
-	./LoadBalancer
+run:
+	./LoadBalancingSimulator
 	
 clean:
 	rm -f core *.o
