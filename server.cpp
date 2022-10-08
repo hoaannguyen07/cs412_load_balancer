@@ -27,11 +27,17 @@ void Server::assignRequest(Request* request, int curTime)
 
 bool Server::isReadyToResolveRequest(int curTime)
 {
-    return this->m_requestCurrentlyHandling != nullptr && curTime >= this->m_requestEndTime;
+    return curTime >= this->m_requestEndTime;
 }
 
 void Server::attemptResolvingRequest(int curTime)
 {
+    if (this->isAvailable())
+    {
+        std::cout << "Server is currently not processing any requests";
+        return;
+    }
+    
     if (!this->isReadyToResolveRequest(curTime))
     {
         std::cout << "Can't Resolve just yet";
@@ -42,7 +48,7 @@ void Server::attemptResolvingRequest(int curTime)
     output += "\n===========================================================================\n";
     output += "Server [" + this->name + "] Request Resolution Summary:\n";
     output += "Start Time: " + std::to_string(this->m_requestStartTime) + '\n';
-    output += "End time: " + std::to_string(this->m_requestEndTime) + '\n';
+    output += "End time: " + std::to_string(curTime) + '\n';
     output += this->m_requestCurrentlyHandling->to_string();
     output += "===========================================================================\n";
 

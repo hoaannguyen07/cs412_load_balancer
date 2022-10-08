@@ -45,7 +45,8 @@ public:
 
     /**
      * @brief Have the server attempt resolving the request.
-     * If the current time indicates that the request still has not finished processing, nothing will happen. 
+     * If the Server instance is currently not processing any requests, a statement will be printed but nothing will happen
+     * If the current time indicates that the request still has not finished processing, a statement will be printed but nothing will happen. 
      * If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
      * 
      * @param curTime 
