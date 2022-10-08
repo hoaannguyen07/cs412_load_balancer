@@ -42,6 +42,11 @@ bool RequestQueue::empty()
     return this->m_requestQueue.empty();
 }
 
+int RequestQueue::size()
+{
+    return this->m_requestQueue.size();
+}
+
 std::string RequestQueue::to_string()
 {
     std::string result;

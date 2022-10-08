@@ -61,6 +61,13 @@ public:
     bool empty();
 
     /**
+     * @brief Find size of the request queue
+     * 
+     * @return int 
+     */
+    int size();
+
+    /**
      * @brief Print out the whole Request Queue along with relevant data
      * 
      * @return std::string 
