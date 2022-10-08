@@ -9,7 +9,7 @@ Server::Server(std::string serverName) : name(serverName)
 
 Server::~Server()
 {
-    this->m_requestCurrentlyHandling = nullptr;
+    this->resetServer();
 }
 
 bool Server::isAvailable()
@@ -20,7 +20,9 @@ bool Server::isAvailable()
 
 void Server::assignRequest(Request* request, int curTime)
 {
-    this->m_requestCurrentlyHandling = request;
+    this->resetServer(); // ensure that previous Requests have been properly deallocated
+
+    this->m_requestCurrentlyHandling = new Request(*request);
     this->m_requestStartTime = curTime;
     this->m_requestEndTime = curTime + request->getDuration();
 }
@@ -40,7 +42,7 @@ void Server::attemptResolvingRequest(int curTime)
     
     if (!this->isReadyToResolveRequest(curTime))
     {
-        std::cout << "Can't Resolve just yet";
+        // std::cout << "Can't Resolve just yet";
         return;
     }
 
@@ -51,7 +53,7 @@ void Server::attemptResolvingRequest(int curTime)
     output += "End time: " + std::to_string(curTime) + '\n';
     output += this->m_requestCurrentlyHandling->to_string();
     output += "===========================================================================\n";
-
+    
     std::cout << output;
 
     this->resetServer();
@@ -59,7 +61,11 @@ void Server::attemptResolvingRequest(int curTime)
 
 void Server::resetServer()
 {
-    this->m_requestCurrentlyHandling = nullptr;
+    if (this->m_requestCurrentlyHandling != nullptr)
+    {
+        delete this->m_requestCurrentlyHandling;
+        this->m_requestCurrentlyHandling = nullptr;
+    }
     this->m_requestStartTime = -1;
     this->m_requestEndTime = -1;
 }
