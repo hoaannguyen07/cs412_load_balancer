@@ -23,6 +23,13 @@ public:
      * 
      */
     Request();
+
+    /**
+     * @brief Construct a deep copy of a Request object
+     * 
+     * @param request 
+     */
+    Request(const Request& request);
     ~Request() {};
 
     /**

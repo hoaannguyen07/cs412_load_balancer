@@ -10,6 +10,13 @@ Request::Request()
     this->generate_request();
 }
 
+Request::Request(const Request& request)
+{
+    this->m_ip_in = request.m_ip_in;
+    this->m_ip_out = request.m_ip_out;
+    this->m_duration = request.m_duration;
+}
+
 void Request::generate_request()
 {
     std::string ip_in = generate_random_ip();
