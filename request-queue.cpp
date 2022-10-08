@@ -62,7 +62,7 @@ std::string RequestQueue::to_string()
     result += "Queue Size: " + std::to_string(this->m_requestQueue.size()) + '\n';
 
     result += "QUEUE IS NOW EMPTY BECAUSE ALL REQUESTS HAS BEEN POPPED";
-    result += "\n===========================================================================\\n";
+    result += "\n===========================================================================\n";
 
     return result;
 }
