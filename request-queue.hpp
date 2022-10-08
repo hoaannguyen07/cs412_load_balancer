@@ -21,7 +21,7 @@ public:
      * 
      * @param initRequestAmount Amount of initial random requests to be generated. Defaults to 500
      */
-    RequestQueue(int initRequestAmount = 500);
+    RequestQueue(int initRequestAmount);
     ~RequestQueue() {};
 
     /**
