@@ -1,6 +1,7 @@
 #include "request.hpp"
 #include "request-queue.hpp"
 #include "server.hpp"
+#include "server-group.hpp"
 
 #include <iostream>
 #include <stdlib.h>
@@ -62,19 +63,42 @@ void testServer()
 
     Request request = Request();
     server.assignRequest(&request, 3);
-    std::cout << server.m_requestCurrentlyHandling->to_string();
-    server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration() - 1);
-    server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration());
+    // std::cout << server.m_requestCurrentlyHandling->to_string();
+    // server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration() - 1);
+    // server.attemptResolvingRequest(3 + server.m_requestCurrentlyHandling->getDuration());
 
+}
+
+void testServerGroup()
+{
+    ServerGroup serverGroup = ServerGroup(3);
+
+    std::cout << serverGroup.to_string();
+
+    std::cout << serverGroup[1].to_string();
+
+    Request randomRequest = Request();
+
+    Server& pickedServer = serverGroup[1];
+    pickedServer.assignRequest(&randomRequest, 0);
+    // std::cout << pickedServer.to_string();
+
+    
+    std::cout << serverGroup[1].to_string();
+
+    pickedServer.attemptResolvingRequest(randomRequest.getDuration() - 1);
+    pickedServer.attemptResolvingRequest(randomRequest.getDuration());
+    std::cout << serverGroup[1].to_string();
 }
 
 int main()
 {
     srand(time(NULL)); // seeding random number generator
     int num_cycles = 10000, num_servers = 10;
-    Option chosen_option = handle_input(num_cycles, num_servers);
+    // Option chosen_option = handle_input(num_cycles, num_servers);
 
-    testServer();
+    // testServer();
+    testServerGroup();
 
 
     return 0;
