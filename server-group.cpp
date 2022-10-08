@@ -1,5 +1,9 @@
 #include "server-group.hpp"
 
+ServerGroup::ServerGroup()
+{
+    this->m_serverArray = std::vector<Server>();
+}
 
 ServerGroup::ServerGroup(int size)
 {

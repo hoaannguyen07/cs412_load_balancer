@@ -16,6 +16,12 @@ private:
     std::vector<Server> m_serverArray;
 public:
     /**
+     * @brief Construct a new Server Group object with no servers to start out with
+     * 
+     */
+    ServerGroup();
+    
+    /**
      * @brief Construct a new Server Group object with an initial number of servers
      * 
      * @param size 
