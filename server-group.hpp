@@ -6,6 +6,10 @@
 #ifndef SERVERGROUP_HPP
 #define SERVERGROUP_HPP
 
+/**
+ * @brief A grouping of servers with the same capabilities
+ * 
+ */
 class ServerGroup
 {
 private:
@@ -26,8 +30,19 @@ public:
      * @return Server 
      */
     Server& operator[] (int index);
+
+    /**
+     * @brief Get the size of the server group
+     * 
+     * @return int 
+     */
     int size();
 
+    /**
+     * @brief Get a summary of the server group
+     * 
+     * @return std::string 
+     */
     std::string to_string();
 };
 
