@@ -21,7 +21,7 @@ void Request::generate_request()
 {
     std::string ip_in = generate_random_ip();
     std::string ip_out = generate_random_ip();
-    int duration = rand() % 501 + 10;
+    int duration = rand() % 291 + 10;
 
     this->m_ip_in = ip_in;
     this->m_ip_out = ip_out;
