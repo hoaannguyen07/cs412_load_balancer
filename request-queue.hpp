@@ -7,7 +7,7 @@
 #define REQUESTQUEUE_HPP
 
 /**
- * @brief Class outlining a queue of requests for a server to handle
+ * @brief Class modeling a request queue that a load balancer would subscribe to in order to handle incoming requests
  * 
  */
 class RequestQueue
@@ -25,8 +25,9 @@ public:
     ~RequestQueue() {};
 
     /**
-     * @brief Get the Next Request object. Will pop that request out from the queue as well.
-     * Get the Request at the front of the queue and pop that request from the queue. Returns the request that was at the front of the queue.
+     * @brief Get the next Request object. 
+     * 
+     * @details Will pop that request out from the queue as well. Get the Request at the front of the queue and pop that request from the queue. Returns the request that was at the front of the queue.
      * 
      * @return Request 
      */
@@ -42,7 +43,7 @@ public:
     /**
      * @brief Add a new request into the Request Queue
      * 
-     * @param newRequest The request to be added to the request queue
+     * @param newRequest The request to be added to the queue
      */
     void push(Request& newRequest);
 
@@ -55,20 +56,20 @@ public:
     /**
      * @brief Check if queue is empty or not
      * 
-     * @return true If queue is empty
-     * @return false If queue is NOT empty
+     * @retval true if queue is empty
+     * @retval false if queue is NOT empty
      */
     bool empty();
 
     /**
-     * @brief Find size of the request queue
+     * @brief Get size of the request queue
      * 
      * @return int 
      */
     int size();
 
     /**
-     * @brief Print out the whole Request Queue along with relevant data
+     * @brief Summarize the request queue in a nicely laid out string
      * 
      * @return std::string 
      */
