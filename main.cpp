@@ -1,8 +1,8 @@
-#include "request.hpp"
-#include "request-queue.hpp"
-#include "server.hpp"
-#include "server-group.hpp"
-#include "load-balancer.hpp"
+// #include "request.hpp"
+// #include "request-queue.hpp"
+// #include "server.hpp"
+// #include "server-group.hpp"
+// #include "load-balancer.hpp"
 #include "test-load-balancer.hpp"
 
 #include <iostream>
@@ -13,7 +13,7 @@ enum Option {DEFAULT, CUSTOM, INVALID};
 
 void output_parameters_of_load_balancer(int& num_cycles, int& num_servers)
 {
-    std::cout << "Starting off with " << num_cycles << " clock cycles and " << num_servers << " servers\n";
+    std::cout << "Starting off with [" << num_cycles << "] clock cycles and [" << num_servers << "] servers\n";
 }
 
 Option handle_input(int &num_cycles, int &num_servers)
@@ -31,9 +31,9 @@ Option handle_input(int &num_cycles, int &num_servers)
                 break;
             case 'c':
                 option = CUSTOM;
-                std::cout << "How many cycles do you want to run the Load Balancer for? ";
+                std::cout << "How many clock cycles do you want to run the Load Balancer for? (default = 10,000)";
                 std::cin >> num_cycles;
-                std::cout << "How many servers do you want to start off with? ";
+                std::cout << "How many servers do you want to start off with? (default = 10)";
                 std::cin >> num_servers;
                 break;
             default:
@@ -45,18 +45,18 @@ Option handle_input(int &num_cycles, int &num_servers)
     return option;
 }
 
+/**
+ * @brief Entry point into the Load Balancing simulation
+ * 
+ * @return int 
+ */
 int main()
 {
     srand(time(NULL)); // seeding random number generator
     int num_cycles = 10000, num_servers = 10;
     Option chosen_option = handle_input(num_cycles, num_servers);
 
-    // TestLoadBalancer::testRequestQueue();
-    // TestLoadBalancer::testServer();
-    // TestLoadBalancer::testServerGroup();
-
     TestLoadBalancer::simulateLoadBalancer(500, num_servers, num_cycles);
-
 
     return 0;
 }
