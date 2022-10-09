@@ -6,7 +6,7 @@
 #define SERVER_HPP
 
 /**
- * @brief A class used to handle requests
+ * @brief Class modeling a server, which is used to handle requests
  * 
  */
 class Server
@@ -30,26 +30,27 @@ public:
     /**
      * @brief Check if the server is available to process a new request
      * 
-     * @return true Server is available to process a new request
-     * @return false Server is NOT available to process a new request
+     * @retval true if server is available to process a new request
+     * @retval false if server is NOT available to process a new request
      */
     bool isAvailable();
 
     /**
      * @brief Assign a request to the server for handling
      * 
-     * @param request The request the server is supposed to handle
-     * @param curTime The current clock time
+     * @param request Request the server is supposed to handle
+     * @param curTime Current clock time
      */
     void assignRequest(Request* request, int curTime);
 
     /**
      * @brief Have the server attempt resolving the request.
-     * If the Server instance is currently not processing any requests, a statement will be printed but nothing will happen
-     * If the current time indicates that the request still has not finished processing, a statement will be printed but nothing will happen. 
-     * If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
      * 
-     * @param curTime 
+     * @details If the Server instance is currently not processing any requests, a statement will be printed but nothing will happen
+     * @details If the current time indicates that the request still has not finished processing, nothing will happen. 
+     * @details If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
+     * 
+     * @param curTime Current clock time
      */
     void attemptResolvingRequest(int curTime);
 
