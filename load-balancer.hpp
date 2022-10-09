@@ -1,10 +1,11 @@
+
+#ifndef LOADBALANCER_HPP
+#define LOADBALANCER_HPP
+
 #include "request.hpp"
 #include "server-group.hpp"
 
 #include <string>
-
-#ifndef LOADBALANCER_HPP
-#define LOADBALANCER_HPP
 
 /**
  * @brief Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately

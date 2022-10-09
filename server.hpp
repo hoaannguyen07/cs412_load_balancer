@@ -1,9 +1,10 @@
-#include "request.hpp"
-
-#include <string>
 
 #ifndef SERVER_HPP
 #define SERVER_HPP
+
+#include "request.hpp"
+
+#include <string>
 
 /**
  * @brief Class modeling a server, which is used to handle requests

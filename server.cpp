@@ -1,6 +1,6 @@
 #include "server.hpp"
 
-#include <string>
+#include <iostream>
 
 Server::Server(std::string serverName) : name(serverName)
 {

@@ -1,8 +1,5 @@
 #include "request-queue.hpp"
 
-#include <stdlib.h>
-#include <time.h>
-
 RequestQueue::RequestQueue(int initRequestAmount = 500)
 {
     this->m_initQueueSize = initRequestAmount;

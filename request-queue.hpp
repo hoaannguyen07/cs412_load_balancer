@@ -1,10 +1,11 @@
+
+#ifndef REQUESTQUEUE_HPP
+#define REQUESTQUEUE_HPP
+
 #include "request.hpp"
 
 #include <queue>
 #include <string>
-
-#ifndef REQUESTQUEUE_HPP
-#define REQUESTQUEUE_HPP
 
 /**
  * @brief Class modeling a request queue that a load balancer would subscribe to in order to handle incoming requests

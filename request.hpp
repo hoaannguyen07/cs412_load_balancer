@@ -1,8 +1,8 @@
-#include <iostream>
-#include <string>
 
 #ifndef REQUEST_HPP
 #define REQUEST_HPP
+
+#include <string>
 
 /**
  * @brief Class modeling how a request to a server would look like

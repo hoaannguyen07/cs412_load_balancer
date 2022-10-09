@@ -1,10 +1,11 @@
+
+#ifndef SERVERGROUP_HPP
+#define SERVERGROUP_HPP
+
 #include "server.hpp"
 
 #include <vector>
 #include <string>
-
-#ifndef SERVERGROUP_HPP
-#define SERVERGROUP_HPP
 
 /**
  * @brief Class modeling a group of servers with the same capabilities/specs

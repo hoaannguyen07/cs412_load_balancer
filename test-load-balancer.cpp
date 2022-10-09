@@ -6,6 +6,7 @@
 #include "server-group.hpp"
 #include "load-balancer.hpp"
 
+#include <iostream>
 #include <math.h>
 
 void TestLoadBalancer::testRequestQueue()
