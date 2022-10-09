@@ -7,9 +7,9 @@
 #define LOADBALANCER_HPP
 
 /**
- * @brief Class used to assign requests to individual servers in server groups to distribute workloads appropriately
+ * @brief Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately
  * 
- * @details This class uses the Round-Robin method to assign requests to servers for processing. This means that the next available server handles the incoming request. Due to the simplicity of this load balancer, server groups consisting of servers with the same specs will be best for this load balancer because the speed at which a request can be processed will not vary. Assigning a request to a specific server will not slow down the server more than if it was assigned to another server.
+ * @details This class uses the round-robin method to assign requests to servers for processing. This means that the next available server handles the incoming request. Due to the simplicity of this load balancer, server groups consisting of servers with the same specs will be best for this load balancer because the speed at which a request can be processed will not vary. Assigning a request to a specific server will not slow down the server more than if it was assigned to another server.
  * 
  */
 class LoadBalancer
