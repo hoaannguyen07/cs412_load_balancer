@@ -7,7 +7,7 @@
 #define SERVERGROUP_HPP
 
 /**
- * @brief A grouping of servers with the same capabilities
+ * @brief Class modeling a group of servers with the same capabilities/specs
  * 
  */
 class ServerGroup
@@ -24,7 +24,7 @@ public:
     /**
      * @brief Construct a new Server Group object with an initial number of servers
      * 
-     * @param size 
+     * @param size Initial number of servers the server group will have
      */
     ServerGroup(int size);
     ~ServerGroup() {};
@@ -45,7 +45,7 @@ public:
     int size();
 
     /**
-     * @brief Get a summary of the server group
+     * @brief Get a summary of the server group in string format
      * 
      * @return std::string 
      */
