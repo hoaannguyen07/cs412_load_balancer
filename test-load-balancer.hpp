@@ -1,6 +1,10 @@
 #ifndef TESTLOADBALANCER_HPP
 #define TESTLOADBALANCER_HPP
 
+/**
+ * @brief Class used to test components of the load balancer. Mainly used to simulate load balancing
+ * 
+ */
 class TestLoadBalancer
 {
 private:
