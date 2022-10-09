@@ -5,7 +5,7 @@
 #define REQUEST_HPP
 
 /**
- * @brief Outlines a mock request a server would receive
+ * @brief Class modeling how a request to a server would look like
  * 
  */
 class Request
@@ -19,28 +19,29 @@ private:
     std::string generate_random_ip();
 public:
     /**
-     * @brief Construct a new Request object with random input & output IP address and random legnth the request takes to process
+     * @brief Construct a new Request object with random input & output IP addresses and random duration the request would take to process
      * 
+     * @details IP addresses use the IPv4 format, meaning the it uses the "x.x.x.x" format with each x being a value from 0 to 255. The duration of each request ranges from 10 to 300 clock cycles.
      */
     Request();
 
     /**
      * @brief Construct a deep copy of a Request object
      * 
-     * @param request 
+     * @param request Request that the instance wants a deep copy of
      */
     Request(const Request& request);
     ~Request() {};
 
     /**
-     * @brief Get the duration it would take to resolve this particular request
+     * @brief Get the amount of clock cycles it would take to resolve the request
      * 
      * @return int 
      */
     int getDuration();
 
     /**
-     * @brief Puts the request in a nicely laid out string format for cout and debugging
+     * @brief Summarize the request in a nicely laid out string in JSON format
      * 
      * @return std::string 
      */
