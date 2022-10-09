@@ -18,9 +18,9 @@ private:
 public:
     ServerGroup m_serverGroup;
     /**
-     * @brief Construct a new Load Balancer object with an initial size
+     * @brief Construct a new Load Balancer object with an initial server group size
      * 
-     * @param size 
+     * @param size Initial size of the server group the load balancer has acess to in order to distributed the workload
      */
     LoadBalancer(int size);
     ~LoadBalancer() {};
@@ -28,7 +28,7 @@ public:
     /**
      * @brief Update the clock time for all server to finish up processing their requests if possible
      * 
-     * @param curTime 
+     * @param curTime Current clock time
      */
     void updateServerStates(int curTime);
 
@@ -37,10 +37,11 @@ public:
      * 
      * @details Update the current time for servers in the server group in order to resolve any requests a server has that can be reolved. Then, find an available server to handle the request being passed in
      * 
-     * @param (Request*) request 
-     * @param int curTime 
-     * @retval TRUE if request has been picked up by a server and is processing
-     * @retval FALSE if request has not been picked up yet OR request == nullptr (no request to process)
+     * @param request Request that the load balancer needs to handle
+     * @param curTime Current clock time
+     * 
+     * @retval true if request has been picked up by a server and is processing
+     * @retval false if request has not been picked up yet OR request == nullptr (no request to process)
      */
     bool processNewRequestAndUpdateServerStates(Request* request, int curTime);
 

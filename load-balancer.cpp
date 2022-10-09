@@ -7,7 +7,7 @@ LoadBalancer::LoadBalancer(int size)
 
 void LoadBalancer::updateServerStates(int curTime)
 {
-    /**
+    /*
      * Passing in nullptr for "request" field will skip the assigning of request to a server
      * The updating of server clocks will stay the same
      */
@@ -22,7 +22,7 @@ bool LoadBalancer::processNewRequestAndUpdateServerStates(Request* request, int 
     {
         Server& curServer = this->m_serverGroup[i];
 
-        /**
+        /*
          * Can just call Server.attemptResolvingRequest() but that has some processing (including I/O)
          * which can be avoided if we know that there is nothing to resolve.
          * I/O is expensive at scale, so cutting back on that will save up on time and reduce
