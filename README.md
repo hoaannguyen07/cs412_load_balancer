@@ -1,6 +1,6 @@
 # Project 2: Load Balancer
 ## Getting Started
-- Use click this [link](https://www.google.com/) to view the documentation for this Load Balancer implementing the round-robin technique.
+- Use click this [link](http://people.tamu.edu/~hoaannguyen07/csce-412/project2/documentation/index.html) to view the documentation for this Load Balancer implementing the round-robin technique.
 
 ## Compilation and Running 
 If you have `cmake` installed, run `make` to run and start the simulation.
