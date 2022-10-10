@@ -64,15 +64,26 @@ void TestLoadBalancer::simulateLoadBalancer(int initRequestAmount, int initServe
     LoadBalancer loadBalancer(initServerAmount);
     std::cout << loadBalancer.to_string() << std::endl;
 
-    int nextCycleToGenerateRequest = rand() % 41 + 10;
+    int nextCycleToGenerateRequest = rand() % 141 + 10;
+
+    int totalRequests = initRequestAmount;
+
+    bool canEndSimulation = false;
 
     for(int i = 0; i < clockCycles; i++)
     {
+        if (canEndSimulation)
+        {
+            break;
+        }
+
         if (i >= nextCycleToGenerateRequest)
         {
             Request randomRequest = Request();
             requestQueue.push(randomRequest);
-            nextCycleToGenerateRequest = rand() % 41 + 10 + i;
+            totalRequests ++;
+
+            nextCycleToGenerateRequest = rand() % 141 + 10 + i;
         }
 
         bool canKeepProcessingRequests = true;
@@ -84,6 +95,11 @@ void TestLoadBalancer::simulateLoadBalancer(int initRequestAmount, int initServe
             if (requestQueue.empty())
             {
                 canKeepProcessingRequests = false;
+                if (loadBalancer.allServersAreFree())
+                {
+                    canEndSimulation = true;
+                    break;
+                }
             } else
             {
                 curReq = requestQueue.front();
@@ -106,6 +122,14 @@ void TestLoadBalancer::simulateLoadBalancer(int initRequestAmount, int initServe
         };
     }
 
-    std::cout << "Still " << requestQueue.size() << " left in queue";
-
+    if (canEndSimulation)
+    {
+        std::cout << "\nRequest Queue is empty and Load Balancer has finished resolving all requests";
+        std::cout << "\nThere were [" << totalRequests << "] requests in total\n";
+    } else
+    {
+        std::cout << "Not all requests were able to be handled in the given [" << clockCycles << "] clock cycles";
+        std::cout << "\nThere were [" << totalRequests << "] requests in total";
+        std::cout << "\nThere are till " << requestQueue.size() << " left in queue\n";
+    }
 }

@@ -34,7 +34,7 @@ public:
     /**
      * @brief Simulate load balancing with an initial amount of requests, initial server amount, and clock cycles this load balancer will be running for
      * 
-     * @details As the simulation runs, there will be new requests added to the request queue every 10 to 50 clock cycles.
+     * @details As the simulation runs, there will be new requests added to the request queue every 10 to 150 clock cycles.
      * 
      * @param initRequestAmount Initial amount of requests the request queue will start out with
      * @param initServerAmount Initial amount of servers the server group will start out with

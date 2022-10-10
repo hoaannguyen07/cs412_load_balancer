@@ -18,13 +18,15 @@ bool Server::isAvailable()
 }
 
 
-void Server::assignRequest(Request* request, int curTime)
+ServerState Server::assignRequest(Request* request, int curTime)
 {
     this->resetServer(); // ensure that previous Requests have been properly deallocated
 
     this->m_requestCurrentlyHandling = new Request(*request);
     this->m_requestStartTime = curTime;
     this->m_requestEndTime = curTime + request->getDuration();
+
+    return ServerState::JUST_STARTED_PROCESSING_REQUEST;
 }
 
 bool Server::isReadyToResolveRequest(int curTime)
@@ -32,18 +34,18 @@ bool Server::isReadyToResolveRequest(int curTime)
     return curTime >= this->m_requestEndTime;
 }
 
-void Server::attemptResolvingRequest(int curTime)
+ServerState Server::attemptResolvingRequest(int curTime)
 {
     if (this->isAvailable())
     {
         std::cout << "Server is currently not processing any requests";
-        return;
+        return ServerState::IS_AVAILABLE;
     }
     
     if (!this->isReadyToResolveRequest(curTime))
     {
         // std::cout << "Can't Resolve just yet";
-        return;
+        return ServerState::PROCESSING_REQUEST;
     }
 
     std::string output;
@@ -57,6 +59,8 @@ void Server::attemptResolvingRequest(int curTime)
     std::cout << output;
 
     this->resetServer();
+
+    return ServerState::JUST_FINISHED_PROCESSING_REQUEST;
 }
 
 void Server::resetServer()

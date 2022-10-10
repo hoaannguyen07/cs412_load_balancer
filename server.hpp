@@ -7,6 +7,12 @@
 #include <string>
 
 /**
+ * @brief Enum describing the current state of a server
+ * 
+ */
+enum class ServerState {IS_AVAILABLE = 0, PROCESSING_REQUEST = 1, JUST_STARTED_PROCESSING_REQUEST = 2, JUST_FINISHED_PROCESSING_REQUEST = 3};
+
+/**
  * @brief Class modeling a server, which is used to handle requests
  * 
  */
@@ -41,8 +47,9 @@ public:
      * 
      * @param request Request the server is supposed to handle
      * @param curTime Current clock time
+     * @return ServerState 
      */
-    void assignRequest(Request* request, int curTime);
+    ServerState assignRequest(Request* request, int curTime);
 
     /**
      * @brief Have the server attempt resolving the request.
@@ -52,8 +59,10 @@ public:
      * @details If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
      * 
      * @param curTime Current clock time
+     *
+     * @return ServerState 
      */
-    void attemptResolvingRequest(int curTime);
+    ServerState attemptResolvingRequest(int curTime);
 
     /**
      * @brief Reset the server state to prepare to handle a new request. Ensure that the server will be available if it is not already.

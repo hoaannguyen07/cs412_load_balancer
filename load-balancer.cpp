@@ -3,6 +3,7 @@
 LoadBalancer::LoadBalancer(int size)
 {
     this->m_serverGroup = ServerGroup(size);
+    this->m_serversAvailable = this->m_serverGroup.size();
 }
 
 void LoadBalancer::updateServerStates(int curTime)
@@ -30,24 +31,33 @@ bool LoadBalancer::processNewRequestAndUpdateServerStates(Request* request, int 
          */
         if (!curServer.isAvailable())
         {
-            curServer.attemptResolvingRequest(curTime);
+            ServerState stateOfResolvingRequest = curServer.attemptResolvingRequest(curTime);
+            // when a server finishes processing a request, it becomes free again
+            if (stateOfResolvingRequest == ServerState::JUST_FINISHED_PROCESSING_REQUEST)
+            {
+                this->m_serversAvailable ++;
+            }
         }
 
+        // when request is valid and a server is available, use the server to process the request
         if (request != nullptr && curServer.isAvailable() && !requestIsProcessing)
         {
-            // std::cout << curServer.to_string();
-
-            // std::cout << request->to_string();
-
-            curServer.assignRequest(request, curTime);
-
-            // std::cout << this->m_serverGroup[i].to_string();
+            ServerState stateOfAssigningRequest= curServer.assignRequest(request, curTime);
+            if (stateOfAssigningRequest == ServerState::JUST_STARTED_PROCESSING_REQUEST)
+            {
+                this->m_serversAvailable ++;
+            }
 
             requestIsProcessing = true;
         }
     }
 
     return requestIsProcessing;
+}
+
+bool LoadBalancer::allServersAreFree()
+{
+    return this->m_serversAvailable >= this->m_serverGroup.size();
 }
 
 std::string LoadBalancer::to_string()

@@ -16,8 +16,9 @@
 class LoadBalancer
 {
 private:
-public:
     ServerGroup m_serverGroup;
+    int m_serversAvailable;
+public:
     /**
      * @brief Construct a new Load Balancer object with an initial server group size
      * 
@@ -45,6 +46,14 @@ public:
      * @retval false if request has not been picked up yet OR request == nullptr (no request to process)
      */
     bool processNewRequestAndUpdateServerStates(Request* request, int curTime);
+
+    /**
+     * @brief Check if all servers in the server group are free
+     * 
+     * @retval true if all servers in the server group is free
+     * @retval false if there exists at least 1 server in the server group still processing a request
+     */
+    bool allServersAreFree();
 
     std::string to_string();
 };
