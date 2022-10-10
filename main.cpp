@@ -1,10 +1,6 @@
-// #include "request.hpp"
-// #include "request-queue.hpp"
-// #include "server.hpp"
-// #include "server-group.hpp"
-// #include "load-balancer.hpp"
 #include "test-load-balancer.hpp"
 
+#include <fstream>
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -13,7 +9,7 @@ enum Option {DEFAULT, CUSTOM, INVALID};
 
 void output_parameters_of_load_balancer(int& num_cycles, int& num_servers)
 {
-    std::cout << "Starting off with [" << num_cycles << "] clock cycles and [" << num_servers << "] servers\n";
+    std::cout << "\nStarting off with [" << num_cycles << "] clock cycles and [" << num_servers << "] servers\n";
 }
 
 Option handle_input(int &num_cycles, int &num_servers)
@@ -52,11 +48,17 @@ Option handle_input(int &num_cycles, int &num_servers)
  */
 int main()
 {
+    // std::ofstream out("log.txt");
+    // std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+    // std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+
     srand(time(NULL)); // seeding random number generator
     int num_cycles = 10000, num_servers = 10;
     Option chosen_option = handle_input(num_cycles, num_servers);
 
     TestLoadBalancer::simulateLoadBalancer(500, num_servers, num_cycles);
+
+    // std::cout.rdbuf(coutbuf); //reset to standard output again
 
     return 0;
 }
