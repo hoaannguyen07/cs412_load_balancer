@@ -1,0 +1,81 @@
+.TH "Request" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Request \- Class modeling how a request to a server would look like\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <request\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRequest\fP ()"
+.br
+.RI "Construct a new \fBRequest\fP object with random input & output IP addresses and random duration the request would take to process\&. "
+.ti -1c
+.RI "\fBRequest\fP (const \fBRequest\fP &request)"
+.br
+.RI "Construct a deep copy of a \fBRequest\fP object\&. "
+.ti -1c
+.RI "int \fBgetDuration\fP ()"
+.br
+.RI "Get the amount of clock cycles it would take to resolve the request\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP ()"
+.br
+.RI "Summarize the request in a nicely laid out string in JSON format\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class modeling how a request to a server would look like\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Request::Request ()"
+
+.PP
+Construct a new \fBRequest\fP object with random input & output IP addresses and random duration the request would take to process\&. IP addresses use the IPv4 format, meaning the it uses the 'x\&.x\&.x\&.x' format with each x being a value from 0 to 255\&. The duration of each request ranges from 10 to 300 clock cycles\&. 
+.SS "Request::Request (const \fBRequest\fP & request)"
+
+.PP
+Construct a deep copy of a \fBRequest\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP \fBRequest\fP that the instance wants a deep copy of 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int Request::getDuration ()"
+
+.PP
+Get the amount of clock cycles it would take to resolve the request\&. 
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.SS "std::string Request::to_string ()"
+
+.PP
+Summarize the request in a nicely laid out string in JSON format\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::string 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS 412 Load Balancer from the source code\&.

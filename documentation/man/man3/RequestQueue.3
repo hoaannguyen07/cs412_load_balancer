@@ -1,0 +1,143 @@
+.TH "RequestQueue" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RequestQueue \- Class modeling a request queue that a load balancer would subscribe to in order to handle incoming requests\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <request\-queue\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRequestQueue\fP (int initRequestAmount)"
+.br
+.RI "Construct a new \fBRequest\fP Queue object with a preset amount of random requests already populating the queue\&. "
+.ti -1c
+.RI "\fBRequest\fP \fBgetNextRequest\fP ()"
+.br
+.RI "Get the next \fBRequest\fP object\&. "
+.ti -1c
+.RI "\fBRequest\fP \fBfront\fP ()"
+.br
+.RI "Get request at the front of the queue\&. "
+.ti -1c
+.RI "void \fBpush\fP (\fBRequest\fP &newRequest)"
+.br
+.RI "Add a new request into the \fBRequest\fP Queue\&. "
+.ti -1c
+.RI "void \fBpop\fP ()"
+.br
+.RI "Pop the request currently at the front of the queue\&. "
+.ti -1c
+.RI "bool \fBempty\fP ()"
+.br
+.RI "Check if queue is empty or not\&. "
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.RI "Get size of the request queue\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP ()"
+.br
+.RI "Summarize the request queue in a nicely laid out string\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class modeling a request queue that a load balancer would subscribe to in order to handle incoming requests\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RequestQueue::RequestQueue (int initRequestAmount = \fC500\fP)"
+
+.PP
+Construct a new \fBRequest\fP Queue object with a preset amount of random requests already populating the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinitRequestAmount\fP Amount of initial random requests to be generated\&. Defaults to 500 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RequestQueue::empty ()"
+
+.PP
+Check if queue is empty or not\&. 
+.PP
+\fBReturn values\fP
+.RS 4
+\fItrue\fP if queue is empty 
+.br
+\fIfalse\fP if queue is NOT empty 
+.RE
+.PP
+
+.SS "\fBRequest\fP RequestQueue::front ()"
+
+.PP
+Get request at the front of the queue\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBRequest\fP 
+.RE
+.PP
+
+.SS "\fBRequest\fP RequestQueue::getNextRequest ()"
+
+.PP
+Get the next \fBRequest\fP object\&. Will pop that request out from the queue as well\&. Get the \fBRequest\fP at the front of the queue and pop that request from the queue\&. Returns the request that was at the front of the queue\&.
+.PP
+\fBReturns\fP
+.RS 4
+\fBRequest\fP 
+.RE
+.PP
+
+.SS "void RequestQueue::pop ()"
+
+.PP
+Pop the request currently at the front of the queue\&. 
+.SS "void RequestQueue::push (\fBRequest\fP & newRequest)"
+
+.PP
+Add a new request into the \fBRequest\fP Queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInewRequest\fP The request to be added to the queue 
+.RE
+.PP
+
+.SS "int RequestQueue::size ()"
+
+.PP
+Get size of the request queue\&. 
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.SS "std::string RequestQueue::to_string ()"
+
+.PP
+Summarize the request queue in a nicely laid out string\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::string 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS 412 Load Balancer from the source code\&.

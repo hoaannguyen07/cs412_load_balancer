@@ -1,0 +1,110 @@
+\hypertarget{class_server_group}{}\doxysection{Server\+Group Class Reference}
+\label{class_server_group}\index{ServerGroup@{ServerGroup}}
+
+
+Class modeling a group of servers with the same capabilities/specs.  
+
+
+
+
+{\ttfamily \#include $<$server-\/group.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_group_aaa9b0d615c98842adf70dcb14d272449}{Server\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_server}{Server}} Group object with no servers to start out with. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_server_group_a193aaf66748f650d8f5f5931f120d73d}{Server\+Group}} (int \mbox{\hyperlink{class_server_group_aae608d58d2d582cc46e15730c0abda91}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_server}{Server}} Group object with an initial number of servers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_server}{Server}} \& \mbox{\hyperlink{class_server_group_a5cde8d42b354a6e6a5fdfe136433849e}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\begin{DoxyCompactList}\small\item\em Get server at a certain index in the server group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_server_group_aae608d58d2d582cc46e15730c0abda91}{size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the server group. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_server_group_abc5e25ed35230d111bb3bf404ca645c1}{to\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em Get a summary of the server group in string format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class modeling a group of servers with the same capabilities/specs. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_server_group_aaa9b0d615c98842adf70dcb14d272449}\label{class_server_group_aaa9b0d615c98842adf70dcb14d272449}} 
+\index{ServerGroup@{ServerGroup}!ServerGroup@{ServerGroup}}
+\index{ServerGroup@{ServerGroup}!ServerGroup@{ServerGroup}}
+\doxysubsubsection{\texorpdfstring{ServerGroup()}{ServerGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Server\+Group\+::\+Server\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_server}{Server}} Group object with no servers to start out with. 
+
+\mbox{\Hypertarget{class_server_group_a193aaf66748f650d8f5f5931f120d73d}\label{class_server_group_a193aaf66748f650d8f5f5931f120d73d}} 
+\index{ServerGroup@{ServerGroup}!ServerGroup@{ServerGroup}}
+\index{ServerGroup@{ServerGroup}!ServerGroup@{ServerGroup}}
+\doxysubsubsection{\texorpdfstring{ServerGroup()}{ServerGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Server\+Group\+::\+Server\+Group (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_server}{Server}} Group object with an initial number of servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Initial number of servers the server group will have \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_server_group_a5cde8d42b354a6e6a5fdfe136433849e}\label{class_server_group_a5cde8d42b354a6e6a5fdfe136433849e}} 
+\index{ServerGroup@{ServerGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ServerGroup@{ServerGroup}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_server}{Server}} \& Server\+Group\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Get server at a certain index in the server group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of wanted server in the server group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_server}{Server}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_group_aae608d58d2d582cc46e15730c0abda91}\label{class_server_group_aae608d58d2d582cc46e15730c0abda91}} 
+\index{ServerGroup@{ServerGroup}!size@{size}}
+\index{size@{size}!ServerGroup@{ServerGroup}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Server\+Group\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the size of the server group. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_group_abc5e25ed35230d111bb3bf404ca645c1}\label{class_server_group_abc5e25ed35230d111bb3bf404ca645c1}} 
+\index{ServerGroup@{ServerGroup}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!ServerGroup@{ServerGroup}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Server\+Group\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a summary of the server group in string format. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server-\/group.\+hpp\item 
+server-\/group.\+cpp\end{DoxyCompactItemize}

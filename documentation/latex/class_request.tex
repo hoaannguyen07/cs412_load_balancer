@@ -1,0 +1,90 @@
+\hypertarget{class_request}{}\doxysection{Request Class Reference}
+\label{class_request}\index{Request@{Request}}
+
+
+Class modeling how a request to a server would look like.  
+
+
+
+
+{\ttfamily \#include $<$request.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_request}{Request}} object with random input \& output IP addresses and random duration the request would take to process. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request_a00d96f64ad543b1ffe6696d3ee98c6f1}{Request}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em Construct a deep copy of a \mbox{\hyperlink{class_request}{Request}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_a945ff887150648bd9f52b60496b1cb1c}{get\+Duration}} ()
+\begin{DoxyCompactList}\small\item\em Get the amount of clock cycles it would take to resolve the request. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_a855144bddc0a54601170615db0f382d7}{to\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em Summarize the request in a nicely laid out string in JSON format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class modeling how a request to a server would look like. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_request_afaf8d8928de7ffff8a3767589489bd33}\label{class_request_afaf8d8928de7ffff8a3767589489bd33}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_request}{Request}} object with random input \& output IP addresses and random duration the request would take to process. 
+
+IP addresses use the IPv4 format, meaning the it uses the \char`\"{}x.\+x.\+x.\+x\char`\"{} format with each x being a value from 0 to 255. The duration of each request ranges from 10 to 300 clock cycles. \mbox{\Hypertarget{class_request_a00d96f64ad543b1ffe6696d3ee98c6f1}\label{class_request_a00d96f64ad543b1ffe6696d3ee98c6f1}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+Construct a deep copy of a \mbox{\hyperlink{class_request}{Request}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \mbox{\hyperlink{class_request}{Request}} that the instance wants a deep copy of \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_a945ff887150648bd9f52b60496b1cb1c}\label{class_request_a945ff887150648bd9f52b60496b1cb1c}} 
+\index{Request@{Request}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily int Request\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the amount of clock cycles it would take to resolve the request. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a855144bddc0a54601170615db0f382d7}\label{class_request_a855144bddc0a54601170615db0f382d7}} 
+\index{Request@{Request}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Request\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Summarize the request in a nicely laid out string in JSON format. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+request.\+hpp\item 
+request.\+cpp\end{DoxyCompactItemize}

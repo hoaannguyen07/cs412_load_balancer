@@ -1,0 +1,39 @@
+\hypertarget{request-queue_8hpp_source}{}\doxysection{request-\/queue.hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef REQUESTQUEUE\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define REQUESTQUEUE\_HPP}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}request.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_request_queue}{RequestQueue}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     std::queue<Request> m\_requestQueue;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} m\_initQueueSize;}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_request_queue}{RequestQueue}}(\textcolor{keywordtype}{int} initRequestAmount);}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_request_queue}{\string~RequestQueue}}() \{\};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_request}{Request}} \mbox{\hyperlink{class_request_queue_aabcf6ed3aba61682bdfcc5c48d2face5}{getNextRequest}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42     \mbox{\hyperlink{class_request}{Request}} \mbox{\hyperlink{class_request_queue_a1b489f01f4a75de54a8167195b9c60ea}{front}}();}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_request_queue_a8a11ee30901e102efe441086b88b3e1f}{push}}(\mbox{\hyperlink{class_request}{Request}}\& newRequest);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_request_queue_a27c990195bd759e42e3abeb4a61ad2e8}{pop}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_request_queue_aaba0cd9ffc42a84ed759ffde763792d1}{empty}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_request_queue_ac2a2a546ac5579e45ca11f433a8a804c}{size}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{77     std::string \mbox{\hyperlink{class_request_queue_aad8e35458051da2099c50ee482af48e3}{to\_string}}();}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// REQUESTQUEUE\_HPP}}
+
+\end{DoxyCode}

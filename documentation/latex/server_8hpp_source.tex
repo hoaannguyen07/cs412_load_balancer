@@ -1,0 +1,40 @@
+\hypertarget{server_8hpp_source}{}\doxysection{server.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SERVER\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SERVER\_HPP}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}request.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{keyword}{enum class} ServerState \{IS\_AVAILABLE = 0, PROCESSING\_REQUEST = 1, JUST\_STARTED\_PROCESSING\_REQUEST = 2, JUST\_FINISHED\_PROCESSING\_REQUEST = 3\};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     std::string name;}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_request}{Request}}* m\_requestCurrentlyHandling = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} m\_requestStartTime = -\/1;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} m\_requestEndTime = -\/1;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} isReadyToResolveRequest(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_server}{Server}}(std::string serverName);}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_server}{\string~Server}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_server_aec5ecc6af39de245913467102017d131}{isAvailable}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{52     ServerState \mbox{\hyperlink{class_server_aa6c55bed2336551b163a76fc31304206}{assignRequest}}(\mbox{\hyperlink{class_request}{Request}}* request, \textcolor{keywordtype}{int} curTime);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{65     ServerState \mbox{\hyperlink{class_server_a4e61f65de2345b3c8f267352a17cabfc}{attemptResolvingRequest}}(\textcolor{keywordtype}{int} curTime);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_server_af7c5753f6cf1429a53af97f094848f43}{resetServer}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78     std::string \mbox{\hyperlink{class_server_a2c78c406259e913f0ae9aebbbbeadf23}{to\_string}}();}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SERVER\_HPP}}
+
+\end{DoxyCode}

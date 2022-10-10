@@ -1,0 +1,33 @@
+\hypertarget{load-balancer_8hpp_source}{}\doxysection{load-\/balancer.hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LOADBALANCER\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LOADBALANCER\_HPP}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}request.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}server-\/group.hpp"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_load_balancer}{LoadBalancer}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_server_group}{ServerGroup}} m\_serverGroup;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} m\_serversAvailable;}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_load_balancer}{LoadBalancer}}(\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_load_balancer}{\string~LoadBalancer}}() \{\};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_load_balancer_ab1db3a90a921df793dfea995c33c6109}{updateServerStates}}(\textcolor{keywordtype}{int} curTime);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_load_balancer_a730388630e1583f2d373c906ca5613b1}{processNewRequestAndUpdateServerStates}}(\mbox{\hyperlink{class_request}{Request}}* request, \textcolor{keywordtype}{int} curTime);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_load_balancer_a08fac1ede8f07aa6ab83f0cf6156a9a9}{allServersAreFree}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     std::string to\_string();}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// LOADBALANCER\_HPP}}
+
+\end{DoxyCode}

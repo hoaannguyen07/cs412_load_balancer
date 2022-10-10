@@ -1,0 +1,87 @@
+\hypertarget{class_test_load_balancer}{}\doxysection{Test\+Load\+Balancer Class Reference}
+\label{class_test_load_balancer}\index{TestLoadBalancer@{TestLoadBalancer}}
+
+
+Class used to test components of the load balancer. Mainly used to simulate load balancing.  
+
+
+
+
+{\ttfamily \#include $<$test-\/load-\/balancer.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_load_balancer_adb2be09240341a64538b9c786d634edf}{test\+Request\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Test the \mbox{\hyperlink{class_request_queue}{Request\+Queue}} class and the different funcitonalities it has. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_test_load_balancer_a9e92e5253ccdb225207b41af6991ecbd}{test\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Test the \mbox{\hyperlink{class_server}{Server}} class and the different functionalities it has. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_test_load_balancer_ae865258c5321a49848eed1bcdd47c6d8}{test\+Server\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Test the \mbox{\hyperlink{class_server_group}{Server\+Group}} class and the different functionalities it has. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_test_load_balancer_ab712dda1749b2d33dbfe47c8171ed5b1}{simulate\+Load\+Balancer}} (int init\+Request\+Amount, int init\+Server\+Amount, int clock\+Cycles)
+\begin{DoxyCompactList}\small\item\em Simulate load balancing with an initial amount of requests, initial server amount, and clock cycles this load balancer will be running for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class used to test components of the load balancer. Mainly used to simulate load balancing. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_load_balancer_ab712dda1749b2d33dbfe47c8171ed5b1}\label{class_test_load_balancer_ab712dda1749b2d33dbfe47c8171ed5b1}} 
+\index{TestLoadBalancer@{TestLoadBalancer}!simulateLoadBalancer@{simulateLoadBalancer}}
+\index{simulateLoadBalancer@{simulateLoadBalancer}!TestLoadBalancer@{TestLoadBalancer}}
+\doxysubsubsection{\texorpdfstring{simulateLoadBalancer()}{simulateLoadBalancer()}}
+{\footnotesize\ttfamily void Test\+Load\+Balancer\+::simulate\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{init\+Request\+Amount,  }\item[{int}]{init\+Server\+Amount,  }\item[{int}]{clock\+Cycles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Simulate load balancing with an initial amount of requests, initial server amount, and clock cycles this load balancer will be running for. 
+
+As the simulation runs, there will be new requests added to the request queue every 10 to 150 clock cycles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+Request\+Amount} & Initial amount of requests the request queue will start out with \\
+\hline
+{\em init\+Server\+Amount} & Initial amount of servers the server group will start out with \\
+\hline
+{\em clock\+Cycles} & The amount of clock cycles the simulation will run for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_test_load_balancer_adb2be09240341a64538b9c786d634edf}\label{class_test_load_balancer_adb2be09240341a64538b9c786d634edf}} 
+\index{TestLoadBalancer@{TestLoadBalancer}!testRequestQueue@{testRequestQueue}}
+\index{testRequestQueue@{testRequestQueue}!TestLoadBalancer@{TestLoadBalancer}}
+\doxysubsubsection{\texorpdfstring{testRequestQueue()}{testRequestQueue()}}
+{\footnotesize\ttfamily void Test\+Load\+Balancer\+::test\+Request\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test the \mbox{\hyperlink{class_request_queue}{Request\+Queue}} class and the different funcitonalities it has. 
+
+\mbox{\Hypertarget{class_test_load_balancer_a9e92e5253ccdb225207b41af6991ecbd}\label{class_test_load_balancer_a9e92e5253ccdb225207b41af6991ecbd}} 
+\index{TestLoadBalancer@{TestLoadBalancer}!testServer@{testServer}}
+\index{testServer@{testServer}!TestLoadBalancer@{TestLoadBalancer}}
+\doxysubsubsection{\texorpdfstring{testServer()}{testServer()}}
+{\footnotesize\ttfamily void Test\+Load\+Balancer\+::test\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test the \mbox{\hyperlink{class_server}{Server}} class and the different functionalities it has. 
+
+\mbox{\Hypertarget{class_test_load_balancer_ae865258c5321a49848eed1bcdd47c6d8}\label{class_test_load_balancer_ae865258c5321a49848eed1bcdd47c6d8}} 
+\index{TestLoadBalancer@{TestLoadBalancer}!testServerGroup@{testServerGroup}}
+\index{testServerGroup@{testServerGroup}!TestLoadBalancer@{TestLoadBalancer}}
+\doxysubsubsection{\texorpdfstring{testServerGroup()}{testServerGroup()}}
+{\footnotesize\ttfamily void Test\+Load\+Balancer\+::test\+Server\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test the \mbox{\hyperlink{class_server_group}{Server\+Group}} class and the different functionalities it has. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+test-\/load-\/balancer.\+hpp\item 
+test-\/load-\/balancer.\+cpp\end{DoxyCompactItemize}

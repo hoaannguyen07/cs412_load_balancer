@@ -1,0 +1,129 @@
+.TH "Server" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Server \- Class modeling a server, which is used to handle requests\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <server\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServer\fP (std::string serverName)"
+.br
+.RI "Construct a new \fBServer\fP object with a passed in name\&. "
+.ti -1c
+.RI "bool \fBisAvailable\fP ()"
+.br
+.RI "Check if the server is available to process a new request\&. "
+.ti -1c
+.RI "ServerState \fBassignRequest\fP (\fBRequest\fP *request, int curTime)"
+.br
+.RI "Assign a request to the server for handling\&. "
+.ti -1c
+.RI "ServerState \fBattemptResolvingRequest\fP (int curTime)"
+.br
+.RI "Have the server attempt resolving the request\&. "
+.ti -1c
+.RI "void \fBresetServer\fP ()"
+.br
+.RI "Reset the server state to prepare to handle a new request\&. Ensure that the server will be available if it is not already\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP ()"
+.br
+.RI "Summarize the state of the server instance\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class modeling a server, which is used to handle requests\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Server::Server (std::string serverName)"
+
+.PP
+Construct a new \fBServer\fP object with a passed in name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIserverName\fP name of the created \fBServer\fP instance 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "ServerState Server::assignRequest (\fBRequest\fP * request, int curTime)"
+
+.PP
+Assign a request to the server for handling\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP \fBRequest\fP the server is supposed to handle 
+.br
+\fIcurTime\fP Current clock time 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+ServerState 
+.RE
+.PP
+
+.SS "ServerState Server::attemptResolvingRequest (int curTime)"
+
+.PP
+Have the server attempt resolving the request\&. If the \fBServer\fP instance is currently not processing any requests, a statement will be printed but nothing will happen
+.PP
+If the current time indicates that the request still has not finished processing, nothing will happen\&.
+.PP
+If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
+.PP
+\fBParameters\fP
+.RS 4
+\fIcurTime\fP Current clock time
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+ServerState 
+.RE
+.PP
+
+.SS "bool Server::isAvailable ()"
+
+.PP
+Check if the server is available to process a new request\&. 
+.PP
+\fBReturn values\fP
+.RS 4
+\fItrue\fP if server is available to process a new request 
+.br
+\fIfalse\fP if server is NOT available to process a new request 
+.RE
+.PP
+
+.SS "void Server::resetServer ()"
+
+.PP
+Reset the server state to prepare to handle a new request\&. Ensure that the server will be available if it is not already\&. 
+.SS "std::string Server::to_string ()"
+
+.PP
+Summarize the state of the server instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::string 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS 412 Load Balancer from the source code\&.

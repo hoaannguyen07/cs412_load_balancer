@@ -1,0 +1,102 @@
+.TH "LoadBalancer" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LoadBalancer \- Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <load\-balancer\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLoadBalancer\fP (int size)"
+.br
+.RI "Construct a new Load Balancer object with an initial server group size\&. "
+.ti -1c
+.RI "void \fBupdateServerStates\fP (int curTime)"
+.br
+.RI "Update the clock time for all server to finish up processing their requests if possible\&. "
+.ti -1c
+.RI "bool \fBprocessNewRequestAndUpdateServerStates\fP (\fBRequest\fP *request, int curTime)"
+.br
+.RI "Attempt to process a request and update the time for all servers to finish up processing their requests if possible\&. "
+.ti -1c
+.RI "bool \fBallServersAreFree\fP ()"
+.br
+.RI "Check if all servers in the server group are free\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately\&. 
+
+This class uses the round-robin method to assign requests to servers for processing\&. This means that the next available server handles the incoming request\&. Due to the simplicity of this load balancer, server groups consisting of servers with the same specs will be best for this load balancer because the speed at which a request can be processed will not vary\&. Assigning a request to a specific server will not slow down the server more than if it was assigned to another server\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LoadBalancer::LoadBalancer (int size)"
+
+.PP
+Construct a new Load Balancer object with an initial server group size\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP Initial size of the server group the load balancer has acess to in order to distributed the workload 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool LoadBalancer::allServersAreFree ()"
+
+.PP
+Check if all servers in the server group are free\&. 
+.PP
+\fBReturn values\fP
+.RS 4
+\fItrue\fP if all servers in the server group is free 
+.br
+\fIfalse\fP if there exists at least 1 server in the server group still processing a request 
+.RE
+.PP
+
+.SS "bool LoadBalancer::processNewRequestAndUpdateServerStates (\fBRequest\fP * request, int curTime)"
+
+.PP
+Attempt to process a request and update the time for all servers to finish up processing their requests if possible\&. Update the current time for servers in the server group in order to resolve any requests a server has that can be reolved\&. Then, find an available server to handle the request being passed in
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP \fBRequest\fP that the load balancer needs to handle 
+.br
+\fIcurTime\fP Current clock time
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fItrue\fP if request has been picked up by a server and is processing 
+.br
+\fIfalse\fP if request has not been picked up yet OR request == nullptr (no request to process) 
+.RE
+.PP
+
+.SS "void LoadBalancer::updateServerStates (int curTime)"
+
+.PP
+Update the clock time for all server to finish up processing their requests if possible\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcurTime\fP Current clock time 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS 412 Load Balancer from the source code\&.

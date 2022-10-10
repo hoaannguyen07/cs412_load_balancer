@@ -1,0 +1,115 @@
+\hypertarget{class_load_balancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately.  
+
+
+
+
+{\ttfamily \#include $<$load-\/balancer.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_load_balancer_abe547d461fed74f8a3d5a61467db6872}{Load\+Balancer}} (int size)
+\begin{DoxyCompactList}\small\item\em Construct a new Load Balancer object with an initial server group size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_ab1db3a90a921df793dfea995c33c6109}{update\+Server\+States}} (int cur\+Time)
+\begin{DoxyCompactList}\small\item\em Update the clock time for all server to finish up processing their requests if possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_load_balancer_a730388630e1583f2d373c906ca5613b1}{process\+New\+Request\+And\+Update\+Server\+States}} (\mbox{\hyperlink{class_request}{Request}} $\ast$request, int cur\+Time)
+\begin{DoxyCompactList}\small\item\em Attempt to process a request and update the time for all servers to finish up processing their requests if possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_load_balancer_a08fac1ede8f07aa6ab83f0cf6156a9a9}{all\+Servers\+Are\+Free}} ()
+\begin{DoxyCompactList}\small\item\em Check if all servers in the server group are free. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_load_balancer_a270963bee9736d2df897c775db22cbd6}\label{class_load_balancer_a270963bee9736d2df897c775db22cbd6}} 
+std\+::string {\bfseries to\+\_\+string} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class modeling a load balancer used to assign requests to individual servers in server groups to distribute workloads appropriately. 
+
+This class uses the round-\/robin method to assign requests to servers for processing. This means that the next available server handles the incoming request. Due to the simplicity of this load balancer, server groups consisting of servers with the same specs will be best for this load balancer because the speed at which a request can be processed will not vary. Assigning a request to a specific server will not slow down the server more than if it was assigned to another server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_load_balancer_abe547d461fed74f8a3d5a61467db6872}\label{class_load_balancer_abe547d461fed74f8a3d5a61467db6872}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct a new Load Balancer object with an initial server group size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Initial size of the server group the load balancer has acess to in order to distributed the workload \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_load_balancer_a08fac1ede8f07aa6ab83f0cf6156a9a9}\label{class_load_balancer_a08fac1ede8f07aa6ab83f0cf6156a9a9}} 
+\index{LoadBalancer@{LoadBalancer}!allServersAreFree@{allServersAreFree}}
+\index{allServersAreFree@{allServersAreFree}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{allServersAreFree()}{allServersAreFree()}}
+{\footnotesize\ttfamily bool Load\+Balancer\+::all\+Servers\+Are\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if all servers in the server group are free. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if all servers in the server group is free \\
+\hline
+{\em false} & if there exists at least 1 server in the server group still processing a request \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_load_balancer_a730388630e1583f2d373c906ca5613b1}\label{class_load_balancer_a730388630e1583f2d373c906ca5613b1}} 
+\index{LoadBalancer@{LoadBalancer}!processNewRequestAndUpdateServerStates@{processNewRequestAndUpdateServerStates}}
+\index{processNewRequestAndUpdateServerStates@{processNewRequestAndUpdateServerStates}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{processNewRequestAndUpdateServerStates()}{processNewRequestAndUpdateServerStates()}}
+{\footnotesize\ttfamily bool Load\+Balancer\+::process\+New\+Request\+And\+Update\+Server\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_request}{Request}} $\ast$}]{request,  }\item[{int}]{cur\+Time }\end{DoxyParamCaption})}
+
+
+
+Attempt to process a request and update the time for all servers to finish up processing their requests if possible. 
+
+Update the current time for servers in the server group in order to resolve any requests a server has that can be reolved. Then, find an available server to handle the request being passed in
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \mbox{\hyperlink{class_request}{Request}} that the load balancer needs to handle \\
+\hline
+{\em cur\+Time} & Current clock time\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if request has been picked up by a server and is processing \\
+\hline
+{\em false} & if request has not been picked up yet OR request == nullptr (no request to process) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_load_balancer_ab1db3a90a921df793dfea995c33c6109}\label{class_load_balancer_ab1db3a90a921df793dfea995c33c6109}} 
+\index{LoadBalancer@{LoadBalancer}!updateServerStates@{updateServerStates}}
+\index{updateServerStates@{updateServerStates}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{updateServerStates()}{updateServerStates()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::update\+Server\+States (\begin{DoxyParamCaption}\item[{int}]{cur\+Time }\end{DoxyParamCaption})}
+
+
+
+Update the clock time for all server to finish up processing their requests if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+Time} & Current clock time \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+load-\/balancer.\+hpp\item 
+load-\/balancer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+.TH "ServerGroup" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ServerGroup \- Class modeling a group of servers with the same capabilities/specs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <server\-group\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServerGroup\fP ()"
+.br
+.RI "Construct a new \fBServer\fP Group object with no servers to start out with\&. "
+.ti -1c
+.RI "\fBServerGroup\fP (int \fBsize\fP)"
+.br
+.RI "Construct a new \fBServer\fP Group object with an initial number of servers\&. "
+.ti -1c
+.RI "\fBServer\fP & \fBoperator[]\fP (int index)"
+.br
+.RI "Get server at a certain index in the server group\&. "
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.RI "Get the size of the server group\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP ()"
+.br
+.RI "Get a summary of the server group in string format\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class modeling a group of servers with the same capabilities/specs\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ServerGroup::ServerGroup ()"
+
+.PP
+Construct a new \fBServer\fP Group object with no servers to start out with\&. 
+.SS "ServerGroup::ServerGroup (int size)"
+
+.PP
+Construct a new \fBServer\fP Group object with an initial number of servers\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP Initial number of servers the server group will have 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBServer\fP & ServerGroup::operator[] (int index)"
+
+.PP
+Get server at a certain index in the server group\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Index of wanted server in the server group 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBServer\fP 
+.RE
+.PP
+
+.SS "int ServerGroup::size ()"
+
+.PP
+Get the size of the server group\&. 
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.SS "std::string ServerGroup::to_string ()"
+
+.PP
+Get a summary of the server group in string format\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::string 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS 412 Load Balancer from the source code\&.

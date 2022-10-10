@@ -1,0 +1,142 @@
+\hypertarget{class_server}{}\doxysection{Server Class Reference}
+\label{class_server}\index{Server@{Server}}
+
+
+Class modeling a server, which is used to handle requests.  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_acd7998f0b3571f673ff07bbc3e344b88}{Server}} (std\+::string server\+Name)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_server}{Server}} object with a passed in name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_server_aec5ecc6af39de245913467102017d131}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Check if the server is available to process a new request. \end{DoxyCompactList}\item 
+Server\+State \mbox{\hyperlink{class_server_aa6c55bed2336551b163a76fc31304206}{assign\+Request}} (\mbox{\hyperlink{class_request}{Request}} $\ast$request, int cur\+Time)
+\begin{DoxyCompactList}\small\item\em Assign a request to the server for handling. \end{DoxyCompactList}\item 
+Server\+State \mbox{\hyperlink{class_server_a4e61f65de2345b3c8f267352a17cabfc}{attempt\+Resolving\+Request}} (int cur\+Time)
+\begin{DoxyCompactList}\small\item\em Have the server attempt resolving the request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_server_af7c5753f6cf1429a53af97f094848f43}{reset\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Reset the server state to prepare to handle a new request. Ensure that the server will be available if it is not already. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_server_a2c78c406259e913f0ae9aebbbbeadf23}{to\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em Summarize the state of the server instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class modeling a server, which is used to handle requests. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_server_acd7998f0b3571f673ff07bbc3e344b88}\label{class_server_acd7998f0b3571f673ff07bbc3e344b88}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{std\+::string}]{server\+Name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_server}{Server}} object with a passed in name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Name} & name of the created \mbox{\hyperlink{class_server}{Server}} instance \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_server_aa6c55bed2336551b163a76fc31304206}\label{class_server_aa6c55bed2336551b163a76fc31304206}} 
+\index{Server@{Server}!assignRequest@{assignRequest}}
+\index{assignRequest@{assignRequest}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{assignRequest()}{assignRequest()}}
+{\footnotesize\ttfamily Server\+State Server\+::assign\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_request}{Request}} $\ast$}]{request,  }\item[{int}]{cur\+Time }\end{DoxyParamCaption})}
+
+
+
+Assign a request to the server for handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \mbox{\hyperlink{class_request}{Request}} the server is supposed to handle \\
+\hline
+{\em cur\+Time} & Current clock time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Server\+State 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_a4e61f65de2345b3c8f267352a17cabfc}\label{class_server_a4e61f65de2345b3c8f267352a17cabfc}} 
+\index{Server@{Server}!attemptResolvingRequest@{attemptResolvingRequest}}
+\index{attemptResolvingRequest@{attemptResolvingRequest}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{attemptResolvingRequest()}{attemptResolvingRequest()}}
+{\footnotesize\ttfamily Server\+State Server\+::attempt\+Resolving\+Request (\begin{DoxyParamCaption}\item[{int}]{cur\+Time }\end{DoxyParamCaption})}
+
+
+
+Have the server attempt resolving the request. 
+
+If the \mbox{\hyperlink{class_server}{Server}} instance is currently not processing any requests, a statement will be printed but nothing will happen
+
+If the current time indicates that the request still has not finished processing, nothing will happen.
+
+If the current time indicates that the request can be finished, a summary of the server handling the request will be printed out and the server will prepare to handle the next request
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+Time} & Current clock time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Server\+State 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_aec5ecc6af39de245913467102017d131}\label{class_server_aec5ecc6af39de245913467102017d131}} 
+\index{Server@{Server}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily bool Server\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the server is available to process a new request. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if server is available to process a new request \\
+\hline
+{\em false} & if server is NOT available to process a new request \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_server_af7c5753f6cf1429a53af97f094848f43}\label{class_server_af7c5753f6cf1429a53af97f094848f43}} 
+\index{Server@{Server}!resetServer@{resetServer}}
+\index{resetServer@{resetServer}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{resetServer()}{resetServer()}}
+{\footnotesize\ttfamily void Server\+::reset\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the server state to prepare to handle a new request. Ensure that the server will be available if it is not already. 
+
+\mbox{\Hypertarget{class_server_a2c78c406259e913f0ae9aebbbbeadf23}\label{class_server_a2c78c406259e913f0ae9aebbbbeadf23}} 
+\index{Server@{Server}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Server\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Summarize the state of the server instance. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server.\+hpp\item 
+server.\+cpp\end{DoxyCompactItemize}
