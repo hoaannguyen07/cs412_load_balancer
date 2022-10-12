@@ -130,6 +130,6 @@ void TestLoadBalancer::simulateLoadBalancer(int initRequestAmount, int initServe
     {
         std::cout << "Not all requests were able to be handled in the given [" << clockCycles << "] clock cycles";
         std::cout << "\nThere were [" << totalRequests << "] requests in total";
-        std::cout << "\nThere are till " << requestQueue.size() << " left in queue\n";
+        std::cout << "\nThere are still " << requestQueue.size() << " left in queue\n";
     }
 }
