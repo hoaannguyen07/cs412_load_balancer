@@ -45,7 +45,7 @@ bool LoadBalancer::processNewRequestAndUpdateServerStates(Request* request, int 
             ServerState stateOfAssigningRequest= curServer.assignRequest(request, curTime);
             if (stateOfAssigningRequest == ServerState::JUST_STARTED_PROCESSING_REQUEST)
             {
-                this->m_serversAvailable ++;
+                this->m_serversAvailable --;
             }
 
             requestIsProcessing = true;
