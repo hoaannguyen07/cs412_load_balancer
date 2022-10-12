@@ -1,0 +1,20 @@
+\hypertarget{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Getting Started}\label{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Use click this \href{http://people.tamu.edu/~hoaannguyen07/csce-412/project2/documentation/index.html}{\texttt{ link}} to view the documentation for this Load Balancer implementing the round-\/robin technique.
+\end{DoxyItemize}\hypertarget{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Compilation and Running}\label{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md2}
+If you have {\ttfamily cmake} installed, run {\ttfamily make} to run and start the simulation.
+
+Otherwise, run the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/O -\/o LoadBalancingSimulator.exe main.cpp request.cpp request-\/queue.cpp server.cpp server-\/group.cpp load-\/balancer.cpp test-\/load-\/balancer.cpp \&\& ./LoadBalancingSimulator.exe}
+
+\end{DoxyCode}
+
+
+Enter the character {\ttfamily d} to choose the default option or {\ttfamily c} to choose the custom option for the load balancer simulation.\hypertarget{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Simulation Options}\label{md__d___texas__a__m__super__senior__fall_2022__c_s_c_e_412____cloud__computing__projects_2_cs412_load_balancer__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Default option {\ttfamily d}\+: Default load balancing option ({\ttfamily num cycles\+: 10,000}, {\ttfamily num servers\+: 10})
+\item Custom option {\ttfamily c}\+: Custom load balancing option 
+\end{DoxyItemize}

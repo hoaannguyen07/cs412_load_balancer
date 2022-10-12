@@ -1,4 +1,5 @@
 \hypertarget{request_8hpp_source}{}\doxysection{request.\+hpp}
+\label{request_8hpp_source}\index{cs412\_load\_balancer/request.hpp@{cs412\_load\_balancer/request.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
@@ -14,20 +15,24 @@
 \DoxyCodeLine{15     std::string m\_ip\_out;}
 \DoxyCodeLine{16     \textcolor{keywordtype}{int} m\_duration;}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{18     \textcolor{keywordtype}{void} generate\_request();}
-\DoxyCodeLine{19     std::string generate\_random\_ip();}
-\DoxyCodeLine{20 \textcolor{keyword}{public}:}
-\DoxyCodeLine{26     \mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}}();}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{33     \mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_request}{Request}}\& request);}
-\DoxyCodeLine{34     \mbox{\hyperlink{class_request}{\string~Request}}() \{\};}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_request_a945ff887150648bd9f52b60496b1cb1c}{getDuration}}();}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{48     std::string \mbox{\hyperlink{class_request_a855144bddc0a54601170615db0f382d7}{to\_string}}();}
-\DoxyCodeLine{49 \};}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// REQUEST\_HPP}}
+\DoxyCodeLine{18     }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} generate\_request();}
+\DoxyCodeLine{21     std::string generate\_random\_ip();}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_request_ae9a14fd18df7c038fe736f1946b8801b}{MIN\_DURATION}} = 10;}
+\DoxyCodeLine{30     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_request_af8fbb4836c7532b2ed878b3bdd359a32}{MAX\_DURATION}} = 100;}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{43     \mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_request}{Request}}\& request);}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_request}{\string~Request}}() \{\};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_request_a945ff887150648bd9f52b60496b1cb1c}{getDuration}}();}
 \DoxyCodeLine{52 }
+\DoxyCodeLine{58     std::string \mbox{\hyperlink{class_request_a855144bddc0a54601170615db0f382d7}{to\_string}}();}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// REQUEST\_HPP}}
+\DoxyCodeLine{62 }
 
 \end{DoxyCode}

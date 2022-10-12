@@ -25,17 +25,18 @@
 var NAVTREE =
 [
   [ "CS 412 Load Balancer", "index.html", [
-    [ "Project 2: Load Balancer", "md__r_e_a_d_m_e.html", [
-      [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Compilation and Running", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Simulation Options", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
+    [ "Project 2: Load Balancer", "md_cs412_load_balancer__r_e_a_d_m_e.html", [
+      [ "Getting Started", "md_cs412_load_balancer__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Compilation and Running", "md_cs412_load_balancer__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Simulation Options", "md_cs412_load_balancer__r_e_a_d_m_e.html#autotoc_md3", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [

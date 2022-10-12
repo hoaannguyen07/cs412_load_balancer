@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['testloadbalancer_0',['TestLoadBalancer',['../class_test_load_balancer.html',1,'']]],
-  ['testrequestqueue_1',['testRequestQueue',['../class_test_load_balancer.html#adb2be09240341a64538b9c786d634edf',1,'TestLoadBalancer']]],
-  ['testserver_2',['testServer',['../class_test_load_balancer.html#a9e92e5253ccdb225207b41af6991ecbd',1,'TestLoadBalancer']]],
-  ['testservergroup_3',['testServerGroup',['../class_test_load_balancer.html#ae865258c5321a49848eed1bcdd47c6d8',1,'TestLoadBalancer']]],
-  ['to_5fstring_4',['to_string',['../class_request_queue.html#aad8e35458051da2099c50ee482af48e3',1,'RequestQueue::to_string()'],['../class_request.html#a855144bddc0a54601170615db0f382d7',1,'Request::to_string()'],['../class_server_group.html#abc5e25ed35230d111bb3bf404ca645c1',1,'ServerGroup::to_string()'],['../class_server.html#a2c78c406259e913f0ae9aebbbbeadf23',1,'Server::to_string()']]]
+  ['server_0',['Server',['../class_server.html',1,'Server'],['../class_server.html#acd7998f0b3571f673ff07bbc3e344b88',1,'Server::Server()']]],
+  ['servergroup_1',['ServerGroup',['../class_server_group.html',1,'ServerGroup'],['../class_server_group.html#aaa9b0d615c98842adf70dcb14d272449',1,'ServerGroup::ServerGroup()'],['../class_server_group.html#a193aaf66748f650d8f5f5931f120d73d',1,'ServerGroup::ServerGroup(int size)']]],
+  ['simulateloadbalancer_2',['simulateLoadBalancer',['../class_test_load_balancer.html#ab712dda1749b2d33dbfe47c8171ed5b1',1,'TestLoadBalancer']]],
+  ['size_3',['size',['../class_request_queue.html#ac2a2a546ac5579e45ca11f433a8a804c',1,'RequestQueue::size()'],['../class_server_group.html#aae608d58d2d582cc46e15730c0abda91',1,'ServerGroup::size()']]]
 ];

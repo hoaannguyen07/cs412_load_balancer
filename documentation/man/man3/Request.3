@@ -1,4 +1,4 @@
-.TH "Request" 3 "Mon Oct 10 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.TH "Request" 3 "Wed Oct 12 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,6 +28,18 @@ Request \- Class modeling how a request to a server would look like\&.
 .RI "std::string \fBto_string\fP ()"
 .br
 .RI "Summarize the request in a nicely laid out string in JSON format\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBMIN_DURATION\fP = 10"
+.br
+.RI "Minimum duration a request can have\&. "
+.ti -1c
+.RI "static const int \fBMAX_DURATION\fP = 100"
+.br
+.RI "Maximum duration a request can have\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 

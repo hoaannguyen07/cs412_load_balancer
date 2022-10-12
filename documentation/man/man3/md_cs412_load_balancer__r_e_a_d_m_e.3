@@ -1,0 +1,33 @@
+.TH "md_cs412_load_balancer__r_e_a_d_m_e" 3 "Wed Oct 12 2022" "Version 0.0.1" "CS 412 Load Balancer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_cs412_load_balancer__r_e_a_d_m_e \- Project 2: Load Balancer 
+.PP
+
+.SH "Getting Started"
+.PP
+.IP "\(bu" 2
+Use click this \fClink\fP to view the documentation for this Load Balancer implementing the round-robin technique\&.
+.PP
+.SH "Compilation and Running"
+.PP
+If you have \fCcmake\fP installed, run \fCmake\fP to run and start the simulation\&.
+.PP
+Otherwise, run the following command: 
+.PP
+.nf
+g++ -O -o LoadBalancingSimulator\&.exe main\&.cpp request\&.cpp request-queue\&.cpp server\&.cpp server-group\&.cpp load-balancer\&.cpp test-load-balancer\&.cpp && \&./LoadBalancingSimulator\&.exe
+
+.fi
+.PP
+.PP
+Enter the character \fCd\fP to choose the default option or \fCc\fP to choose the custom option for the load balancer simulation\&.
+.SH "Simulation Options"
+.PP
+.IP "\(bu" 2
+Default option \fCd\fP: Default load balancing option (\fCnum cycles: 10,000\fP, \fCnum servers: 10\fP)
+.IP "\(bu" 2
+Custom option \fCc\fP: Custom load balancing option 
+.PP
+
