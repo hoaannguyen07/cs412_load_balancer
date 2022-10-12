@@ -9,7 +9,8 @@ enum Option {DEFAULT, CUSTOM, INVALID};
 
 void output_parameters_of_load_balancer(int& num_cycles, int& num_servers)
 {
-    std::cout << "\nStarting off with [" << num_cycles << "] clock cycles and [" << num_servers << "] servers\n";
+    std::cout << "\nStarting off with [" << num_cycles << "] clock cycles, [" << num_servers << "] servers, and [" << 500 << "] requests";
+    std::cout << "\nEach request will take between [10] and [300] clock cycles to resolve.\n";
 }
 
 Option handle_input(int &num_cycles, int &num_servers)
