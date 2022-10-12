@@ -51,7 +51,7 @@ Class modeling how a request to a server would look like\&.
 .SS "Request::Request ()"
 
 .PP
-Construct a new \fBRequest\fP object with random input & output IP addresses and random duration the request would take to process\&. IP addresses use the IPv4 format, meaning the it uses the 'x\&.x\&.x\&.x' format with each x being a value from 0 to 255\&. The duration of each request ranges from 10 to 300 clock cycles\&. 
+Construct a new \fBRequest\fP object with random input & output IP addresses and random duration the request would take to process\&. IP addresses use the IPv4 format, meaning the it uses the 'x\&.x\&.x\&.x' format with each x being a value from 0 to 255\&. The duration of each request range is dependent on the MIN and MAX durations specified in this class\&. 
 .SS "Request::Request (const \fBRequest\fP & request)"
 
 .PP

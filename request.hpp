@@ -31,7 +31,7 @@ public:
     /**
      * @brief Construct a new Request object with random input & output IP addresses and random duration the request would take to process
      * 
-     * @details IP addresses use the IPv4 format, meaning the it uses the "x.x.x.x" format with each x being a value from 0 to 255. The duration of each request ranges from 10 to 300 clock cycles.
+     * @details IP addresses use the IPv4 format, meaning the it uses the "x.x.x.x" format with each x being a value from 0 to 255. The duration of each request range is dependent on the MIN and MAX durations specified in this class.
      */
     Request();
 
