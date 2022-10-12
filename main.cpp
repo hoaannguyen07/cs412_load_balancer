@@ -1,3 +1,4 @@
+#include "request.hpp"
 #include "test-load-balancer.hpp"
 
 #include <fstream>
@@ -9,8 +10,8 @@ enum Option {DEFAULT, CUSTOM, INVALID};
 
 void output_parameters_of_load_balancer(int& num_cycles, int& num_servers)
 {
-    std::cout << "\nStarting off with [" << num_cycles << "] clock cycles, [" << num_servers << "] servers, and [" << 500 << "] requests";
-    std::cout << "\nEach request will take between [10] and [300] clock cycles to resolve.\n";
+    std::cout << "\nStarting off with [" << num_cycles << "] clock cycles, [" << num_servers << "] servers, and [" << num_servers * 2 << "] requests";
+    std::cout << "\nEach request will take between [" << Request::MIN_DURATION << "] and [" << Request::MAX_DURATION << "] clock cycles to resolve.\n";
 }
 
 Option handle_input(int &num_cycles, int &num_servers)
@@ -49,17 +50,17 @@ Option handle_input(int &num_cycles, int &num_servers)
  */
 int main()
 {
-    // std::ofstream out("log.txt");
-    // std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-    // std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+    std::ofstream out("log.txt");
+    std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+    std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
 
     srand(time(NULL)); // seeding random number generator
     int num_cycles = 10000, num_servers = 10;
     Option chosen_option = handle_input(num_cycles, num_servers);
 
-    TestLoadBalancer::simulateLoadBalancer(500, num_servers, num_cycles);
+    TestLoadBalancer::simulateLoadBalancer(num_servers * 2, num_servers, num_cycles);
 
-    // std::cout.rdbuf(coutbuf); //reset to standard output again
+    std::cout.rdbuf(coutbuf); //reset to standard output again
 
     return 0;
 }

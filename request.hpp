@@ -15,9 +15,13 @@ private:
     std::string m_ip_out;
     int m_duration;
 
+    
+
     void generate_request();
     std::string generate_random_ip();
 public:
+    static const int MIN_DURATION = 10;
+    static const int MAX_DURATION = 100;
     /**
      * @brief Construct a new Request object with random input & output IP addresses and random duration the request would take to process
      * 
